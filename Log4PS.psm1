@@ -9,11 +9,11 @@ $script:ModuleParams = $args
 $script:CommandLevelMap = @{'Write-Host'='info';'Write-Debug'='debug';'write-Verbose'='info';'Write-Warning'='warn';'Write-Error'='error'}
 
 #region Generic Helper functions
-. $PSscriptroot\functions\ReceiveModuleParams.ps1
-. $PSScriptroot\functions\PowerObject.ps1
-. $PSScriptRoot\functions\MethodHelpers.ps1
-. $PSScriptRoot\functions\TypeHelpers.ps1
-. $PSScriptRoot\functions\NewGuid.ps1
+. $PSscriptroot\lib\lib.common\ReceiveModuleParams.ps1
+. $PSScriptroot\lib\lib.common\PowerObject.ps1
+. $PSScriptRoot\lib\lib.common\MethodHelpers.ps1
+. $PSScriptRoot\lib\lib.common\TypeHelpers.ps1
+. $PSScriptRoot\lib\lib.common\NewGuid.ps1
 #endregion
 
 #region Enums

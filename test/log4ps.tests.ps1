@@ -53,32 +53,16 @@ Describe 'Enums' {
 		$availableLayouts = ([reflection.assembly]::GetAssembly([log4net.Layout.LayoutSkeleton]).DefinedTypes) | Where-Object { $_.IsSubclassOf([log4net.Layout.LayoutSkeleton]) -and -not $_.isAbstract}
 		Compare-object ([System.Enum]::GetNames([log4net.Layout.Log4PSLayout])) $availableLayouts.Name | Should BeNullOrEmpty
 	}
-	
-	It 'adds the Argument Enum as a dirty workaround' {
-		#This is a (dirty) workaround when generating dynamic parameter to allow a function to have an empty signature:
-		# Do-Something() as well as a signature with multiple mandatory parameters
-		# Do-Something(Arg1,Arg2)
-		# The nicer workaround yet to be implemented is using an undefined DefaultParameterSetName
-		# But I have yet to find how you can set this in your DynamicParam block (reflection?)
-		{ [Argument] } | Should not throw
+	inModuleScope log4ps {
+		It 'adds the Argument Enum as a dirty workaround' {
+			#This is a (dirty) workaround when generating dynamic parameter to allow a function to have an empty signature:
+			# Do-Something() as well as a signature with multiple mandatory parameters
+			# Do-Something(Arg1,Arg2)
+			# The nicer workaround yet to be implemented is using an undefined DefaultParameterSetName
+			# But I have yet to find how you can set this in your DynamicParam block (reflection?)
+			{ [Argument] } | Should not throw
+		}
 	}
-
-}
-
-Describe 'New-Log4psLayout' {
-
-
-}
-
-Describe 'New-Log4psAppender' {
-
-}
-
-Describe 'Clear-Log4psConfiguration' {
-
-}
-
-Describe 'Reset-Log4psConfiguration' {
 
 }
 
