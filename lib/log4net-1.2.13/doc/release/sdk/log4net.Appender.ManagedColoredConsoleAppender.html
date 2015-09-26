@@ -1,0 +1,70 @@
+<html dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252" />
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+    <title>ManagedColoredConsoleAppender Class</title>
+    <xml>
+    </xml>
+    <link rel="stylesheet" type="text/css" href="MSDN.css" />
+  </head>
+  <body id="bodyID" class="dtBODY">
+    <div id="nsbanner">
+      <div id="bannerrow1">
+        <table class="bannerparthead" cellspacing="0">
+          <tr id="hdr">
+            <td class="runninghead">Apache log4net™ SDK Documentation - Microsoft .NET Framework 4.0</td>
+            <td class="product">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div id="TitleRow">
+        <h1 class="dtH1">ManagedColoredConsoleAppender Class</h1>
+      </div>
+    </div>
+    <div id="nstext">
+      <p> Appends colorful logging events to the console, using the .NET 2 built-in capabilities. </p>
+      <p>For a list of all members of this type, see <a href="log4net.Appender.ManagedColoredConsoleAppenderMembers.html">ManagedColoredConsoleAppender Members</a>.</p>
+      <p>
+        <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemObjectClassTopic.htm">System.Object</a>
+        <br />   <a href="log4net.Appender.AppenderSkeleton.html">log4net.Appender.AppenderSkeleton</a><br />      <b>log4net.Appender.ManagedColoredConsoleAppender</b></p>
+      <div class="syntax">
+        <span class="lang">[Visual Basic]</span>
+        <br />Public Class ManagedColoredConsoleAppender<div>    Inherits <a href="log4net.Appender.AppenderSkeleton.html">AppenderSkeleton</a></div></div>
+      <div class="syntax">
+        <span class="lang">[C#]</span>
+        <div>public class ManagedColoredConsoleAppender<b> : <a href="log4net.Appender.AppenderSkeleton.html">AppenderSkeleton</a></b></div>
+      </div>
+      <H4 class="dtH4">Thread Safety</H4>
+      <P>Public static (<b>Shared</b> in Visual Basic) members of this type are 
+				safe for multithreaded operations. Instance members are <b>not</b> guaranteed to be 
+				thread-safe.</P>
+      <h4 class="dtH4">Remarks</h4>
+            <p> ManagedColoredConsoleAppender appends log events to the standard output stream or the error output stream using a layout specified by the user. It also allows the color of a specific type of message to be set. </p>
+            <p> By default, all output is written to the console's standard output stream. The <a href="log4net.Appender.ManagedColoredConsoleAppender.Target.html">Target</a> property can be set to direct the output to the error stream. </p>
+            <p> When configuring the colored console appender, mappings should be specified to map logging levels to colors. For example: </p>
+            <pre class="code" escaped="true"><span class="lang">[XML]
+</span>&lt;mapping&gt;
+    &lt;level value="ERROR" /&gt;
+    &lt;foreColor value="DarkRed" /&gt;
+    &lt;backColor value="White" /&gt;
+&lt;/mapping&gt;
+&lt;mapping&gt;
+    &lt;level value="WARN" /&gt;
+    &lt;foreColor value="Yellow" /&gt;
+&lt;/mapping&gt;
+&lt;mapping&gt;
+    &lt;level value="INFO" /&gt;
+    &lt;foreColor value="White" /&gt;
+&lt;/mapping&gt;
+&lt;mapping&gt;
+    &lt;level value="DEBUG" /&gt;
+    &lt;foreColor value="Blue" /&gt;
+&lt;/mapping&gt;
+</pre>
+            <p> The Level is the standard log4net logging level while ForeColor and BackColor are the values of <a href="ms-help://MS.NETFrameworkSDKv1.1/cpref/html/frlrfSystemConsoleColorClassTopic.htm">ConsoleColor</a> enumeration. </p>
+            <p> Based on the ColoredConsoleAppender </p>
+            <h4 class="dtH4">Requirements</h4><p><b>Namespace: </b><a href="log4net.Appender.html">log4net.Appender</a></p><p><b>Assembly: </b>log4net (in log4net.dll)
+					</p><h4 class="dtH4">See Also</h4><p><a href="log4net.Appender.ManagedColoredConsoleAppenderMembers.html">ManagedColoredConsoleAppender Members</a> | <a href="log4net.Appender.html">log4net.Appender Namespace</a></p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e" viewastext="true" style="display: none;"><param name="Keyword" value="ManagedColoredConsoleAppender class, about ManagedColoredConsoleAppender class"></param></object><hr /><div id="footer"><a href='http://logging.apache.org/log4net/'>Copyright 2004-2013 The Apache Software Foundation.</a><br></br>Apache log4net, Apache and log4net are trademarks of The Apache Software Foundation.</div></div>
+  </body>
+</html>

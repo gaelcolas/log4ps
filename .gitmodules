@@ -4,3 +4,6 @@
 [submodule "gaelcolas.tools.common"]
 	path = gaelcolas.tools.common
 	url = https://github.com/gaelcolas/gaelcolas.tools.common
+[submodule "lib/lib.common"]
+	path = lib/lib.common
+	url = https://github.com/gaelcolas/lib.common
