@@ -1,5 +1,6 @@
 install:
   - cinst pester
+  - cinst powershell -pre
   - git submodule update --init --recursive
 build: false
 
