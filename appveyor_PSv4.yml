@@ -2,6 +2,7 @@ install:
   - cinst pester
   - git submodule update --init --recursive
 build: false
+clone_folder: c:\projects\log4ps
 
 test_script:
   - ps: $PSversionTable | FL *
