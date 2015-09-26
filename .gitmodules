@@ -1,0 +1,3 @@
+[submodule "functions/tools.common"]
+	path = functions/tools.common
+	url = https://github.com/gaelcolas/tools.common
