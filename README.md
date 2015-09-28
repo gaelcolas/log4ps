@@ -1,7 +1,6 @@
 # Log4Ps
 
 __PowerShell logging module__ leveraging log4net and support XML configuration.
-This module ha
 This has been inspired by [log4posh](https://log4posh.codeplex.com/).
 
 
