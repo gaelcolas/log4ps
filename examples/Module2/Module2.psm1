@@ -3,7 +3,6 @@ function Test-Module2 {
 	[cmdletBinding()]
 	Param(
 	)
-
 	Process {
 		Write-Host "`tModule2::TestModule2"
 	}

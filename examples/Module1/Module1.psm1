@@ -7,7 +7,6 @@ function Test-Module1 {
 	Process {
 		Write-Host "`tModule1::TestModule1"
 		$s = (Get-PSCallStack) 
-	
 	}
 }
 

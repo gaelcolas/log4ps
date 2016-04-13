@@ -1,7 +1,13 @@
-#This example a merge between demo3 (nested calls) and demo4 (filter by level) using XML config
+#This example a merge between demo3 (nested calls) and demo4 (filter by level) using XML config (demo5)
 # Remember that it will be loading .\demo7.ps1.config
-# Note that the example is for illustration only, and haven't thought the setup through
+# Note that the example is for illustration only, and haven't thought the particular use case through
 # Also note that you can change the file on the fly and save to update the config
+#            Root logger -> level ERROR -> Appender ErrorLog
+#            logger demo7.ps1 -> level FATAL -> Appender GeneralLog
+#												logger Module1.psm1 -> level ALL -> appender ErrorLog
+#								    logger Module2.psm1 -> level ALL -> appender GeneralLog
+#									   logger dotsourced.ps1 -> level WARN -> appender GeneralLog
+
 Import-Module -Force $PSScriptRoot\..\..\log4ps
 
 
@@ -34,9 +40,9 @@ Test-DotSourced
 
 Write-Host "###################################`r`nLets look at the files"
 Write-Host "ERROR LOG: `r`n"
-gc $Env:tmp\error.log
+Get-Content $Env:tmp\error.log
 
 
 Write-Host "`r`n`r`nGENERAL LOG: `r`n"
 
-gc $Env:tmp\General.log
+Get-Content $Env:tmp\General.log

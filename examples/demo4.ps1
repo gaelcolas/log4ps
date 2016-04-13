@@ -1,4 +1,5 @@
 ﻿#This example shows the Hierarchy customization
+
 #It is a bit painful to do this programatically, but this mainly to illustrate the concept of Hierarchy and different level
 Import-Module -Force $PSScriptRoot\..\..\log4ps
 Clear-Log4PsConfiguration #Start from fresh.

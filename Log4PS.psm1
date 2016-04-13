@@ -98,11 +98,20 @@ function Set-ModuleConfig {
   $ProxyLevelMap = $script:CommandLevelMap,
   
   [switch]
-  $excludeWriteProxyFunction
+  $excludeWriteProxyFunction,
+  
+  [switch]
+  $Log4netInternalDebug
  )
  process {
    $ModuleName = $PSCmdlet.MyInvocation.MyCommand.Module.Name
    
+  if($Log4netInternalDebug) {
+   [log4net.Util.LogLog]::InternalDebugging = $true
+  }
+  else {
+   [log4net.Util.LogLog]::InternalDebugging = $false
+  }
   
   Clear-Configuration
   if($PSBoundParameters.ContainsKey('ProxyLevelMap')) {
@@ -179,7 +188,6 @@ function Get-Logger {
 }
 
 #region Write-Log for log4ps
-#TODO: Set the Alias if you want to proxy your existing Write-Log
 function Write-Log {
  [cmdletBinding()]
  [OutputType([void])]
@@ -822,12 +830,7 @@ Else {
 }
 #endregion
 
-
-
-
 $MyInvocation.MyCommand.ScriptBlock.Module.OnRemove = {
  Clear-Configuration
  Remove-Item alias:Write-Host,alias:Write-Warning,alias:Write-Debug,alias:write-error,alias:write-verbose,alias:write-log,alias:write-information -ErrorAction SilentlyContinue
- 
- 
 }
