@@ -826,7 +826,7 @@ if($script:ParamsForSetModuleConfig.Count -gt 0) {
  Set-ModuleConfig @script:ParamsForSetModuleConfig
 }
 Else {
- Set-ModuleConfig
+ Set-ModuleConfig -Log4netInternalDebug
 }
 #endregion
 
