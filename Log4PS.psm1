@@ -3,8 +3,6 @@ param ()
 $script:ModuleParams = $args
 #endregion
 
-#With Set-<modulename>Config as standard, create a TabPlusPlus extension to auto populate hashtable in -argumentlist
-#capture arguments during module loading
 
 $script:CommandLevelMap = @{'Write-Host'='info';'Write-Debug'='debug';'write-Verbose'='info';'Write-Warning'='warn';'Write-Error'='error'}
 

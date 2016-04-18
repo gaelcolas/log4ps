@@ -1,0 +1,26 @@
+TOPIC
+    about_log4ps
+
+SHORT DESCRIPTION
+    log4ps leverages log4net to help managing the logging and audit of your PowerShell scripts.
+
+LONG DESCRIPTION
+    Using log4net XML configurations log4ps allows you to have production grade logging without any effort. By redirecting the PowerShell Streams to log4net, and leveraging log4net features such as custom properties, appenders, xml configuration watcher, Log4ps allows you to log to console, File, rolling file, database, syslog, smtp, logstash, rabbitMQ and many more without any code.
+	By simply creating a configuration file next to the script that import the modules (such as myscript.ps1.xml), it will load and watch that XML for changes. You can then change the Threshold on the fly, and log4net will adapt its logging to your need.
+
+EXAMPLES
+    #you only need to import the module, and then all Write-<stream> will be logged as per the configuration
+	#The default config (if you don't specify an XML) is to log to the console, with a basic pattern
+	Import-Module log4ps
+	Write-Verbose "This will be logged"
+	Write-Warning "This will have a log level of WARN"
+	"this will be logged as a log level INFO"
+	Throw "this will be also logged as log level FATAL"
+
+KEYWORDS
+    Logging, stream, output, rotation, log rotation, log4net, log4ps, write-log.
+
+SEE ALSO
+    Do have a look in the examples folder within the log4ps module folder, it has some useful example of different configuration.
+	If you'd like more information about how log4net works and its possible feature, please look into log4net official site: https://logging.apache.org/log4net/
+	Most of the configuration can be done via XML.
