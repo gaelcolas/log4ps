@@ -40,16 +40,26 @@ The easiest way to configure log4net, is to have an xml configuration file at th
 See below for a practical example.
 
 ## Example
-__file1.ps1__
+__demo6.ps1__
 ```powershell
-Import-Module Log4ps
+#This file is to demo different type of appender
+#remember, by default the module is looking for a config file, here .\demo6.ps1.config
+Import-Module -Force $PSScriptRoot\..\..\log4ps
 
-Write-Host 'This test is killing puppies!'
+Write-Host 'This test is killing puppies'
+Write-Verbose 'This is a verbose msg'
+Write-Debug -Message 'Debug message'
+Write-warning 'This is a WARN msg!'
+Write-Error 'This is an error'
+
+Get-Content $env:TMP\example.log
+
+#find other example of file appender here: https://logging.apache.org/log4net/release/config-examples.html
 ```
 
-__file1.ps1.config__
+__demo6.ps1.config__
 ```xml
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <configuration>
     <configSections>
         <section name="log4net" type="System.Configuration.IgnoreSectionHandler" />
@@ -58,7 +68,7 @@ __file1.ps1.config__
         <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
             <file value="${TMP}\example.log" />
             <appendToFile value="true" />
-            <maximumFileSize value="100KB" />
+            <maximumFileSize value="1KB" />
             <maxSizeRollBackups value="2" />
             <layout type="log4net.Layout.PatternLayout">
                 <conversionPattern value="%date{yyyy-MM-dd HH:mm:ss.fff[zzz]} %logger [Line: %property{ScriptLineNumber}] %-5level - %message (%property{PSCallStack})%newline" />
