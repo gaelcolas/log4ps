@@ -3,6 +3,10 @@
 __PowerShell logging module__ leveraging log4net and support XML configuration.
 This has been inspired by [log4posh](https://log4posh.codeplex.com/).
 
+## to clone correctly
+
+`git clone --recurse-submodules git@github.com:gaelcolas/log4ps.git`
+There's a dependency with my lib.common git submodules.
 
 ## Compatibility
 
@@ -17,6 +21,23 @@ This module has no external dependencies, everything should be found under this 
 
 ### lib.common
 The github project use a submodule (gaelcolas\lib.common) for some helper functions.
+To clone properly use: `git clone --recurse-submodules git@github.com:gaelcolas/log4ps.git`
+
+Here's the explanation from [StackOverflow](http://stackoverflow.com/questions/1030169/easy-way-pull-latest-of-all-submodules):
+
+```
+git - the base command to perform any git command
+    submodule - Inspects, updates and manages submodules.
+        update - Update the registered submodules to match what the superproject
+        expects by cloning missing submodules and updating the working tree of the
+        submodules. The "updating" can be done in several ways depending on command
+        line options and the value of submodule.<name>.update configuration variable.
+            --init without the explicit init step if you do not intend to customize
+            any submodule locations.
+            --recursive is specified, this command will recurse into the registered
+            submodules, and update any nested submodules within.
+```
+
 Should you clone this project, please note that log4ps\lib\lib.common is subproject, and you may need to do the following from times to times:
 
 ```git
