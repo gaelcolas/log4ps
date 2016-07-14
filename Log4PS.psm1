@@ -197,13 +197,12 @@ function Write-Log {
   $logLevel = 'info',
   [hashtable]
   $properties = @{}
-  #,$proxiedLoggedCmd = @('Write-Error','Write-Debug','Write-Verbose','Write-Host')
- )
+  )
  Begin {
   $prefix = $PSCmdlet.MyInvocation.MyCommand.Module.Prefix
  }
  Process {
-  #TODO: organically grown--> To refactor!
+  #TODO: organically grown--> refactor!
   $CallStack = (Get-PSCallStack)
   if($CallStack[1].Command -eq 'Out-Default' -or (Get-Command -Name $CallStack[1].Command -ea SilentlyContinue).ModuleName -eq 'log4ps') { #internal module caller, such as proxy function
    $PSCallStackIndex = 2
@@ -824,7 +823,7 @@ if($script:ParamsForSetModuleConfig.Count -gt 0) {
  Set-ModuleConfig @script:ParamsForSetModuleConfig
 }
 Else {
- Set-ModuleConfig -Log4netInternalDebug
+ Set-ModuleConfig #-Log4netInternalDebug
 }
 #endregion
 
