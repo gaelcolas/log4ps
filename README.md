@@ -81,6 +81,9 @@ __demo6.ps1.config__
     </log4net>
 </configuration>
 ```
+Result:
+![DEMO 6](./examples/demo6.gif)
+
 ## Configuration
 
 ## Appenders
