@@ -13,7 +13,7 @@ $script:CommandLevelMap = @{'Write-Host'='info';'Write-Debug'='debug';'write-Ver
 . $PSScriptRoot\lib\lib.common\TypeHelpers.ps1
 . $PSScriptRoot\lib\lib.common\NewGuid.ps1
 #endregion
-
+Receive-ModuleParameter # allow for loading of type before module is fully loaded
 #region Enums
 
 #region Create enum from Appender types
